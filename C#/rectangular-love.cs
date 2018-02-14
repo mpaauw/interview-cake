@@ -1,3 +1,4 @@
+// Time: O(1), Space: O(1)
 public Rectangle rectangularLove(Rectangle alpha, Rectangle beta)
 {
     Overlap xOverlap = FindOverlap(alpha.LeftX, alpha.Width, beta.LeftX, beta.Width);
