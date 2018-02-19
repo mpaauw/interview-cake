@@ -8,7 +8,7 @@ private int recursiveBinarySearch(int[] arr, int value, int left, int right)
 {
     if (right < left)
     {
-        return -1;
+        return -1; // element not found in array
     }
     int mid = (left + right) / 2;
     if (arr[mid] == value)
@@ -17,18 +17,18 @@ private int recursiveBinarySearch(int[] arr, int value, int left, int right)
     }
     if (value < arr[mid])
     {
-        return recursiveBinarySearch(arr, value, left, mid - 1);
+        return recursiveBinarySearch(arr, value, left, mid - 1); // search left partition
     }
     else
     {
-        return recursiveBinarySearch(arr, value, mid + 1, right);
+        return recursiveBinarySearch(arr, value, mid + 1, right); // search right partition
     }
 }
 
 private int iterativeBinarySearch(int[] arr, int value)
 {
     int left = 0, right = arr.Length - 1;
-    while (right >= left)
+    while (right > left)
     {
         int mid = (left + right) / 2;
         if (arr[mid] == value)
@@ -37,12 +37,12 @@ private int iterativeBinarySearch(int[] arr, int value)
         }
         if (value < arr[mid])
         {
-            right = mid - 1;
+            right = mid - 1; // search left partition
         }
-        else
+        else 
         {
-            left = mid + 1;
+            left = mid + 1; // search right partition
         }
     }
-    return -1;
+    return -1; // element not found in array
 }
